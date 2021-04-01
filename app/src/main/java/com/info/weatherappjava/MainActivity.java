@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private RecyclerView rv;
     private ImageView abbr;
     private DailyCardAdapter adapter;
+    //değişiklik.
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
