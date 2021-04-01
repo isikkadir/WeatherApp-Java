@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:background="@color/teal_200"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
 
@@ -41,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:paddingLeft="5dp"
                 android:text="Humidity"
                 android:textSize="24sp" />
 
@@ -48,6 +51,7 @@
                 android:id="@+id/wind"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:text="Wind"
 
                 android:textSize="24sp" />

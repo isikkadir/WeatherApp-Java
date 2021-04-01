@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -18,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../sdk/icons/material/materialicons/location_searching/baseline_location_searching_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../sdk/icons/material/materialicons/keyboard_arrow_down/baseline_keyboard_arrow_down_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +33,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="0bff01" />
-                            <entry key="outputName" value="search" />
+                            <entry key="outputName" value="ic_baseline_keyboard_arrow_down_24" />
                             <entry key="sourceFile" value="D:\flutter_uygulama\WeatherAppJava" />
                           </map>
                         </option>

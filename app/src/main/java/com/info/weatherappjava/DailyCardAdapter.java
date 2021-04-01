@@ -2,7 +2,6 @@ package com.info.weatherappjava;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.info.weatherappjava.PojoModels.ConsolidatedWeather;
-import com.info.weatherappjava.PojoModels.MyWeather;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +45,13 @@ public class DailyCardAdapter extends RecyclerView.Adapter<DailyCardAdapter.dail
     public void onBindViewHolder(@NonNull dailyCardHolder holder, int position) {
         ConsolidatedWeather consolidatedWeatherTemp= consolidatedWeatherList.get(position);
         holder.consolidated_day.setText("Gün " + position);
-        holder.consolidated_maxTemp.setText(String.valueOf(consolidatedWeatherTemp.getMaxTemp()));
-        holder.consolidated_minTemp.setText(String.valueOf(consolidatedWeatherTemp.getMinTemp()));
-        holder.consolidated_temp.setText(String.valueOf(consolidatedWeatherTemp.getTheTemp()));
+        holder.consolidated_maxTemp.setText(String.valueOf(Math.round(consolidatedWeatherTemp.getMaxTemp())));
+        holder.consolidated_minTemp.setText(String.valueOf(Math.round(consolidatedWeatherTemp.getMinTemp())));
+        holder.consolidated_temp.setText(String.valueOf(Math.round(consolidatedWeatherTemp.getTheTemp())));
 
         holder.consolidated_abbr.setImageResource(R.drawable.search);
-        holder.consolidated_maxAbbr.setImageResource(R.drawable.search);
-        holder.consolidated_minAbbr.setImageResource(R.drawable.search);
+        holder.consolidated_maxAbbr.setImageResource(R.drawable.up);
+        holder.consolidated_minAbbr.setImageResource(R.drawable.down);
     }
 
     class dailyCardHolder extends RecyclerView.ViewHolder{
