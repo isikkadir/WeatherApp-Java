@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.info.weatherappjava.PojoModels.ConsolidatedWeather;
 import com.info.weatherappjava.PojoModels.MyWeather;
 import com.info.weatherappjava.PojoModels.myLocation;
 import com.info.weatherappjava.Retrofit.ApiClient;
@@ -107,7 +108,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         humidity.setText(String.format("Humidity: %s", Math.round(weather.getConsolidatedWeather().get(0).getHumidity())));
         wind.setText(String.format("Wind: %s", Math.round(weather.getConsolidatedWeather().get(0).getWindSpeed())));
         //set Adapter
-        adapter = new DailyCardAdapter(this,weather.getConsolidatedWeather());
+        List<ConsolidatedWeather> tempList = weather.getConsolidatedWeather();
+        tempList.remove(0);
+        adapter = new DailyCardAdapter(this,tempList);
         //set image
         String url = "https://www.metaweather.com/static/img/weather/png/"+ weather.getConsolidatedWeather().get(0).getWeatherStateAbbr() + ".png";
         Picasso.get().load(url).into(abbr);

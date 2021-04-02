@@ -4,6 +4,8 @@ package com.info.weatherappjava.PojoModels;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Date;
+
 public class ConsolidatedWeather {
 
     @SerializedName("id")
@@ -23,7 +25,7 @@ public class ConsolidatedWeather {
     private String created;
     @SerializedName("applicable_date")
     @Expose
-    private String applicableDate;
+    private Date applicableDate;
     @SerializedName("min_temp")
     @Expose
     private Double minTemp;
@@ -92,11 +94,11 @@ public class ConsolidatedWeather {
         this.created = created;
     }
 
-    public String getApplicableDate() {
+    public Date getApplicableDate() {
         return applicableDate;
     }
 
-    public void setApplicableDate(String applicableDate) {
+    public void setApplicableDate(Date applicableDate) {
         this.applicableDate = applicableDate;
     }
 
