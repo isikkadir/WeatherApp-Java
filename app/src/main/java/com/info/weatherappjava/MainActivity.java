@@ -19,6 +19,7 @@ import com.info.weatherappjava.PojoModels.MyWeather;
 import com.info.weatherappjava.PojoModels.myLocation;
 import com.info.weatherappjava.Retrofit.ApiClient;
 import com.info.weatherappjava.Retrofit.WeatherInterface;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -99,17 +100,21 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     }
     private void setData(MyWeather weather) {
+        //set textViews
         state.setText(weather.getConsolidatedWeather().get(0).getWeatherStateName());
         temp.setText(String.valueOf(Math.round(weather.getConsolidatedWeather().get(0).getTheTemp())));
         city_name.setText(String.format("%s,%s", weather.getTitle(), weather.getParent().getTitle()));
         humidity.setText(String.format("Humidity: %s", Math.round(weather.getConsolidatedWeather().get(0).getHumidity())));
         wind.setText(String.format("Wind: %s", Math.round(weather.getConsolidatedWeather().get(0).getWindSpeed())));
+        //set Adapter
         adapter = new DailyCardAdapter(this,weather.getConsolidatedWeather());
-        abbr.setImageResource(R.drawable.search);
+        //set image
+        String url = "https://www.metaweather.com/static/img/weather/png/"+ weather.getConsolidatedWeather().get(0).getWeatherStateAbbr() + ".png";
+        Picasso.get().load(url).into(abbr);
+        //set recycleview
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         rv.setAdapter(adapter);
-        Log.e("Hata" , String.valueOf(adapter.consolidatedWeatherList.size()));
 
     }
     @Override

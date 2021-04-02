@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.info.weatherappjava.PojoModels.ConsolidatedWeather;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,9 @@ public class DailyCardAdapter extends RecyclerView.Adapter<DailyCardAdapter.dail
         holder.consolidated_minTemp.setText(String.valueOf(Math.round(consolidatedWeatherTemp.getMinTemp())));
         holder.consolidated_temp.setText(String.valueOf(Math.round(consolidatedWeatherTemp.getTheTemp())));
 
-        holder.consolidated_abbr.setImageResource(R.drawable.search);
+        String url = "https://www.metaweather.com/static/img/weather/png/64/"+ consolidatedWeatherTemp.getWeatherStateAbbr() + ".png";
+        Picasso.get().load(url)
+                .into(holder.consolidated_abbr);
         holder.consolidated_maxAbbr.setImageResource(R.drawable.up);
         holder.consolidated_minAbbr.setImageResource(R.drawable.down);
     }
