@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:textColor="@color/design_default_color_background"
                 android:text="Unknown"
                 android:textAlignment="center"
                 android:textSize="30sp" />
@@ -48,13 +49,35 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="9">
+                android:layout_weight="9"
+                android:orientation="vertical">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:textColor="@color/cardview_light_background"
+                    android:text="Next 5 Days" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
 
         </LinearLayout>
 
