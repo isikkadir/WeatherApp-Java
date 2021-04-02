@@ -21,35 +21,42 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
 
-        <TextView
-            android:id="@+id/city_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Unknown"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:layout_height="0dp"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
 
-        <include
-            android:id="@+id/includeMainCard"
-            layout="@layout/main_card" />
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Unknown"
+                android:textAlignment="center"
+                android:textSize="30sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+            <include
+                android:id="@+id/includeMainCard"
+                layout="@layout/main_card" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="413dp"
-            android:layout_height="36dp"
-            android:layout_marginBottom="265dp"
-            android:gravity="center_vertical"
-            android:text="Next 5 days"
-            android:textSize="22sp" />
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
 
     </LinearLayout>
 

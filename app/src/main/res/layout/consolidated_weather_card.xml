@@ -22,6 +22,13 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/consolidated_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Gün Adi"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/consolidated_temp"
@@ -83,13 +90,7 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/consolidated_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Gün Adi"
-                android:textSize="18sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
