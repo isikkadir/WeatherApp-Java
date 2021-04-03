@@ -1,9 +1,7 @@
 package com.info.weatherappjava.Retrofit;
 
-import android.widget.ImageView;
-
-import com.info.weatherappjava.PojoModels.MyWeather;
-import com.info.weatherappjava.PojoModels.myLocation;
+import com.info.weatherappjava.Models.MyWeather;
+import com.info.weatherappjava.Models.MyLocation;
 
 import java.util.List;
 
@@ -15,7 +13,7 @@ import retrofit2.http.Query;
 
 public interface WeatherInterface {
     @GET("api/location/search/?query=location")
-    Call<List<myLocation>> getLocation(
+    Call<List<MyLocation>> getLocation(
             @Query("query") String newLocation);
 
     @GET("api/location/{woeidID}/")

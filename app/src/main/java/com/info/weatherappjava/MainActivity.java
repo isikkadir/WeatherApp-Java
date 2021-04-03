@@ -3,7 +3,6 @@ package com.info.weatherappjava;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,13 +10,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.info.weatherappjava.PojoModels.ConsolidatedWeather;
-import com.info.weatherappjava.PojoModels.MyWeather;
-import com.info.weatherappjava.PojoModels.myLocation;
+import com.info.weatherappjava.Models.ConsolidatedWeather;
+import com.info.weatherappjava.Models.MyWeather;
+import com.info.weatherappjava.Models.MyLocation;
 import com.info.weatherappjava.Retrofit.ApiClient;
 import com.info.weatherappjava.Retrofit.WeatherInterface;
 import com.squareup.picasso.Picasso;
@@ -73,16 +71,16 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
     private void getLocation(){
 
-       Iweather.getLocation(aranacakSehirAdi).enqueue(new Callback<List<myLocation>>() {
+       Iweather.getLocation(aranacakSehirAdi).enqueue(new Callback<List<MyLocation>>() {
 
            @Override
-           public void onResponse(Call<List<myLocation>> call, Response<List<myLocation>> response) {
-               List<myLocation> lokasyon = response.body();
+           public void onResponse(Call<List<MyLocation>> call, Response<List<MyLocation>> response) {
+               List<MyLocation> lokasyon = response.body();
                int cityWoeidId = lokasyon.get(0).getWoeid();
                getWeather(cityWoeidId);
            }
            @Override
-           public void onFailure(Call<List<myLocation>> call, Throwable t) {
+           public void onFailure(Call<List<MyLocation>> call, Throwable t) {
            }
        });
     }

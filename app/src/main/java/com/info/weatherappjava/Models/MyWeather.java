@@ -1,4 +1,4 @@
-package com.info.weatherappjava.PojoModels;
+package com.info.weatherappjava.Models;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,11 +1,12 @@
-package com.info.weatherappjava.PojoModels;
+package com.info.weatherappjava.Models;
+
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Parent implements Serializable {
+public class MyLocation implements Serializable {
 
     @SerializedName("title")
     @Expose
@@ -15,7 +16,7 @@ public class Parent implements Serializable {
     private String locationType;
     @SerializedName("woeid")
     @Expose
-    private Long woeid;
+    private Integer woeid;
     @SerializedName("latt_long")
     @Expose
     private String lattLong;
@@ -36,11 +37,11 @@ public class Parent implements Serializable {
         this.locationType = locationType;
     }
 
-    public Long getWoeid() {
+    public Integer getWoeid() {
         return woeid;
     }
 
-    public void setWoeid(Long woeid) {
+    public void setWoeid(Integer woeid) {
         this.woeid = woeid;
     }
 

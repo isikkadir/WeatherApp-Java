@@ -1,5 +1,5 @@
 
-package com.info.weatherappjava.PojoModels;
+package com.info.weatherappjava.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
